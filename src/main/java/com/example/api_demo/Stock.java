@@ -2,27 +2,28 @@ package com.example.api_demo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Stock {
 	
-	@JsonProperty("01. symbol")
+	@SerializedName("01. symbol")
 	private String symbol;
 	
-	@JsonProperty("02. open")
+	@SerializedName("02. open")
 	private String open;
 	
-	@JsonProperty("03. high")
+	@SerializedName("03. high")
 	private String high;
 	
-	@JsonProperty("04. low")
+	@SerializedName("04. low")
 	private String low;
 	
-	@JsonProperty("05. price")
+	@SerializedName("05. price")
 	private String price;
 	
-	@JsonProperty("06. volume")
-	private String volumn;
+	@SerializedName("06. volume")
+	private String volume;
 	
 	public String getSymbol() {
 		return symbol;
@@ -55,12 +56,13 @@ public class Stock {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public String getVolumn() {
-		return volumn;
+	public String getVolume() {
+		return volume;
 	}
-	public void setVolumn(String volumn) {
-		this.volumn = volumn;
+	public void setVolume(String volume) {
+		this.volume = volume;
 	}
+
 	
 //	@Override
 //	public String toString() {
