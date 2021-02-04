@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api_demo.ApiService;
 import com.example.api_demo.Stock;
-import com.example.api_demo.StockRespond;
+import com.example.api_demo.GlobalQuote;
 import com.example.api_demo.exception.ApplicationException;
 
 @RestController
@@ -21,11 +21,6 @@ public class ApiController {
 			@RequestParam(value = "function", required = false) String function,
 			@RequestParam(value = "symbol", required = false) String symbol,
 			@RequestParam(value = "apikey", required = false) String apikey) throws ApplicationException{
-//		for(int i = 0; i < repo.getPosts().getPost().length; i++) {
-//			System.out.println("Posts: " + repo.getPosts().getPost());
-//		}
-		//if(function==null)sortBy = "id";
-		//if(direction == null)direction = "asc";
 		if(function.equals("")) {
 			throw new ApplicationException("This API function () does not exist.");
 		}
@@ -33,7 +28,6 @@ public class ApiController {
 			throw new ApplicationException("Invalid API call.");
 		}
 
-		System.out.println("Stocks: " + repo.getSingleStock(function, symbol, apikey));
 	    return repo.getSingleStock(function, symbol, apikey);
 	}
 }

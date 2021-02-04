@@ -14,12 +14,11 @@ public class ApiService {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         Gson gson = new Gson();
-        String url = "https://www.alphavantage.co/query?function="+ function + "&" + "symbol=" + symbol + "&"+"apikey="+ apikey;
+        String url = "https://www.alphavantage.co/query?function="+ function + "&" + "symbol=" + symbol + "&"+"apikey="+ apikey; //please register your own api key in https://www.alphavantage.co/documentation/
         System.out.println("calling url: " + url);
         String json =  rest.getForObject(url, String.class);
         System.out.println(json);
-       // String ans = gson.fromJson(json.substring(22), String.class);
-//        Stock stock = gson.fromJson(json.substring(22, json.length()-1), Stock.class);
+
         Stock stock = gson.fromJson(json, Stock.class);
         return stock;
     }
